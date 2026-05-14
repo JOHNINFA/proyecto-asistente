@@ -14,18 +14,34 @@ class Tarea:
     def cancelar(self):
         self.cancelada = True
 
-tarea1 = Tarea("Aprender python","Estudiar clases y POO")
-print(tarea1)
 
-tarea2 = Tarea("Aprende IA full satck", "langchain")
-print(tarea2)
+class GestorTareas:
+    def __init__(self):
+        self.tareas =[]
+    
+    def agregar(self, tarea):
+        self.tareas.append(tarea)
 
-tarea1.completar()
+    def listar(self):
+        for tarea in self.tareas:
+            print(tarea)  
 
-print(tarea1)
-print(tarea2)
+    def buscar(self, nombre):
+        for tarea in self.tareas:
+            if tarea.nombre == nombre: 
+                print(tarea)
+                return
+        print("Tarea no encontrada")      
+
+        
 
 
-tarea1.cancelar()
+gestor = GestorTareas()
+gestor.agregar(Tarea("Aprender Python", "Estudiar POO"))
+gestor.agregar(Tarea("Aprender FastAPI", "Crear una API REST"))
+gestor.agregar(Tarea("Aprender React", "Construir el frontend"))
 
-print(tarea1)
+gestor.listar()
+
+gestor.buscar("Aprender Python")
+gestor.buscar("Aprender Django")
