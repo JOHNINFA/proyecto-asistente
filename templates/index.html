@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRM Intelligence - SalesPro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        
+        .chat-container {
+            background: #f7f9fc;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            min-height: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .message {
+            margin-bottom: 15px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            max-width: 80%;
+            word-wrap: break-word;
+        }
+        
+        .user-message {
+            background: #667eea;
+            color: white;
+            margin-left: auto;
+            text-align: right;
+        }
+        
+        .bot-message {
+            background: white;
+            color: #333;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .input-container {
+            display: flex;
+            gap: 10px;
+        }
+        
+        input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        button {
+            padding: 15px 30px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #5568d3;
+        }
+        
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .loading {
+            display: none;
+            color: #666;
+            font-style: italic;
+            padding: 10px;
+        }
+        
+        .examples {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f4ff;
+            border-radius: 10px;
+        }
+        
+        .examples h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .example-btn {
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 15px;
+            background: white;
+            border: 1px solid #667eea;
+            color: #667eea;
+            border-radius: 8px;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .example-btn:hover {
+            background: #667eea;
+            color: white;
+        }
+        
+        .sources {
+            margin-top: 8px;
+            font-size: 0.85em;
+            color: #888;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 CRM Intelligence</h1>
+        <p class="subtitle">Asistente inteligente para SalesPro CRM</p>
+        
+        <div class="chat-container" id="chatContainer">
+            <div class="message bot-message">
+                ¡Hola! Soy tu asistente inteligente de SalesPro CRM. Puedo ayudarte con información sobre funcionalidades, planes, precios, políticas y más. ¿En qué puedo ayudarte?
+            </div>
+        </div>
+        
+        <div class="loading" id="loading">Pensando...</div>
+        
+        <div class="input-container">
+            <input 
+                type="text" 
+                id="questionInput" 
+                placeholder="Escribe tu pregunta aquí..."
+                onkeypress="handleKeyPress(event)"
+            >
+            <button onclick="sendQuestion()" id="sendBtn">Enviar</button>
+        </div>
+        
+        <div class="examples">
+            <h3>💡 Preguntas de ejemplo:</h3>
+            <span class="example-btn" onclick="askExample('¿Cómo agrego un nuevo contacto?')">¿Cómo agrego un contacto?</span>
+            <span class="example-btn" onclick="askExample('¿Cuánto cuesta el plan Professional?')">Precio del plan Professional</span>
+            <span class="example-btn" onclick="askExample('¿Qué automatizaciones puedo configurar?')">Automatizaciones disponibles</span>
+            <span class="example-btn" onclick="askExample('¿Cómo integro Gmail?')">Integración con Gmail</span>
+            <span class="example-btn" onclick="askExample('¿Qué incluye el plan Enterprise?')">Plan Enterprise</span>
+        </div>
+    </div>
+    
+    <script>
+        function addMessage(text, isUser, sources = null) {
+            const chatContainer = document.getElementById('chatContainer');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
+            messageDiv.textContent = text;
+            
+            if (sources && sources.length > 0) {
+                const sourcesDiv = document.createElement('div');
+                sourcesDiv.className = 'sources';
+                sourcesDiv.textContent = `📚 Fuentes: ${sources.map(s => s.split('/').pop()).join(', ')}`;
+                messageDiv.appendChild(sourcesDiv);
+            }
+            
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+        
+        async function sendQuestion() {
+            const input = document.getElementById('questionInput');
+            const question = input.value.trim();
+            
+            if (!question) return;
+            
+            // Mostrar pregunta del usuario
+            addMessage(question, true);
+            input.value = '';
+            
+            // Mostrar loading
+            const loading = document.getElementById('loading');
+            const sendBtn = document.getElementById('sendBtn');
+            loading.style.display = 'block';
+            sendBtn.disabled = true;
+            
+            try {
+                const response = await fetch('/query', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ question: question })
+                });
+                
+                if (!response.ok) {
+                    throw new Error('Error en la respuesta del servidor');
+                }
+                
+                const data = await response.json();
+                addMessage(data.answer, false, data.sources);
+                
+            } catch (error) {
+                addMessage('Lo siento, hubo un error al procesar tu pregunta. Por favor intenta nuevamente.', false);
+                console.error('Error:', error);
+            } finally {
+                loading.style.display = 'none';
+                sendBtn.disabled = false;
+                input.focus();
+            }
+        }
+        
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendQuestion();
+            }
+        }
+        
+        function askExample(question) {
+            document.getElementById('questionInput').value = question;
+            sendQuestion();
+        }
+    </script>
+</body>
+</html>

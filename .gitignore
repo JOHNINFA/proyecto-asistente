@@ -1,1 +1,10 @@
 venv/
+
+# CRM Intelligence specific
+*.faiss
+*.pkl
+screenshots/
+.env
+
+# Editor
+.vscode/

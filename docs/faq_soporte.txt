@@ -1,0 +1,153 @@
+# SalesPro CRM - Preguntas Frecuentes de Soporte
+
+## Cuenta y Acceso
+
+**¿Cómo recupero mi contraseña?**
+1. Ve a la página de login
+2. Haz clic en "¿Olvidaste tu contraseña?"
+3. Ingresa tu email registrado
+4. Revisa tu correo y sigue las instrucciones
+5. El link expira en 24 horas
+
+**¿Puedo cambiar mi email de cuenta?**
+Sí, ve a Configuración → Perfil → Cambiar Email. Necesitarás verificar el nuevo email.
+
+**¿Cómo cierro mi cuenta?**
+Contacta a soporte@salespro.com o ve a Configuración → Cuenta → Cerrar Cuenta. Los administradores deben transferir la propiedad primero.
+
+## Facturación
+
+**¿Cuándo se cobra la suscripción?**
+El primer día de cada mes. Si te registras el día 15, se prorratea el primer mes.
+
+**¿Qué métodos de pago aceptan?**
+- Tarjeta de crédito (Visa, Mastercard, Amex)
+- Transferencia bancaria (solo plan Enterprise)
+- PayPal
+
+**¿Puedo obtener una factura?**
+Sí, se envía automáticamente por email después de cada pago. También disponible en Configuración → Facturación → Historial.
+
+**¿Hay descuento por pago anual?**
+Sí, 20% de descuento pagando anualmente.
+
+**¿Qué pasa si mi pago falla?**
+Te notificamos por email. Tienes 7 días para actualizar el método de pago antes de que se suspenda la cuenta.
+
+## Funcionalidad
+
+**¿Puedo personalizar las etapas del pipeline?**
+Sí, ve a Configuración → Pipeline → Personalizar Etapas. Puedes agregar, eliminar o renombrar.
+
+**¿Cómo exporto mis contactos?**
+Ve a Contactos → Selecciona los contactos (o todos) → Menú acciones → Exportar. Formato CSV o Excel.
+
+**¿Puedo tener múltiples pipelines?**
+Solo en plan Enterprise. Por ejemplo: Pipeline de Nuevos Clientes y Pipeline de Renovaciones.
+
+**¿Las automatizaciones tienen límite?**
+- Starter: 5 automatizaciones activas
+- Professional: 25 automatizaciones
+- Enterprise: Ilimitadas
+
+**¿Cómo asigno contactos a otro vendedor?**
+Abre el contacto → Clic en "Propietario" → Selecciona el nuevo vendedor. Se notifica automáticamente.
+
+## Integraciones
+
+**¿La integración con Gmail es segura?**
+Sí, usamos OAuth 2.0. Solo pedimos permisos para leer/enviar emails desde la app. No almacenamos tu contraseña.
+
+**¿Cómo conecto WhatsApp?**
+Necesitas una cuenta de WhatsApp Business API (requiere aprobación de Meta). Una vez aprobada, ve a Integraciones → WhatsApp → Conectar.
+
+**¿Puedo usar la API?**
+Sí, disponible en todos los planes. Documentación en: https://api.salespro.com/docs
+
+**¿Hay límite de llamadas a la API?**
+- Starter: 1,000 llamadas/día
+- Professional: 10,000 llamadas/día
+- Enterprise: 100,000 llamadas/día
+
+## Datos y Seguridad
+
+**¿Dónde se almacenan mis datos?**
+En servidores de Azure ubicados en tu región. Opción de elegir región en plan Enterprise.
+
+**¿Hacen backups?**
+Sí, backups automáticos cada 24 horas. Retención de 30 días.
+
+**¿Puedo recuperar datos eliminados?**
+Sí, contactos y oportunidades eliminados van a "Papelera" por 30 días. Después se eliminan permanentemente.
+
+**¿Son compatibles con GDPR?**
+Sí, cumplimos con GDPR, CCPA y otras regulaciones de privacidad. DPA disponible para clientes Enterprise.
+
+## Rendimiento
+
+**¿Por qué va lento el sistema?**
+Posibles causas:
+1. Conexión a internet lenta
+2. Muchas pestañas abiertas
+3. Cache del navegador lleno (intenta limpiar cache)
+4. Extensiones del navegador conflictivas
+
+**¿Cuál navegador recomiendan?**
+Chrome, Firefox, Safari o Edge (versiones recientes). No soportamos Internet Explorer.
+
+**¿Funciona offline?**
+La app móvil tiene funcionalidad offline limitada. La web requiere conexión.
+
+## Migraciones
+
+**¿Pueden ayudarme a migrar desde otro CRM?**
+Sí, plan Professional y Enterprise incluyen asistencia de migración desde Salesforce, HubSpot, Pipedrive y otros.
+
+**¿Cuánto tarda la migración?**
+Depende del volumen. Promedio: 2-5 días hábiles.
+
+**¿Qué datos se pueden migrar?**
+Contactos, empresas, oportunidades, actividades, notas. Algunos campos personalizados pueden requerir mapeo manual.
+
+## Soporte Técnico
+
+**¿Cómo contacto a soporte?**
+- Email: soporte@salespro.com (respuesta en 24hrs)
+- Chat en vivo: Lunes a Viernes 9am-6pm (hora local)
+- Teléfono: Solo plan Enterprise
+
+**¿Tienen soporte en español?**
+Sí, soportamos español, inglés y portugués.
+
+**¿Hay documentación técnica?**
+Sí, en https://docs.salespro.com encontrarás guías, videos y tutoriales.
+
+## Capacitación
+
+**¿Ofrecen entrenamiento?**
+- Starter: Videos de autoaprendizaje
+- Professional: 1 sesión de onboarding (2 horas)
+- Enterprise: Entrenamiento personalizado ilimitado
+
+**¿Hay certificación de SalesPro?**
+Sí, programa de certificación gratuito disponible en https://academy.salespro.com
+
+## Límites y Quotas
+
+**Plan Starter:**
+- 1 usuario
+- 1,000 contactos
+- 5GB almacenamiento
+- 5 automatizaciones
+
+**Plan Professional:**
+- Hasta 10 usuarios
+- 10,000 contactos
+- 50GB almacenamiento
+- 25 automatizaciones
+
+**Plan Enterprise:**
+- Usuarios ilimitados
+- Contactos ilimitados
+- Almacenamiento ilimitado
+- Automatizaciones ilimitadas

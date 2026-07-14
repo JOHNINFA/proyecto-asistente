@@ -1,0 +1,152 @@
+# SalesPro CRM - Base de Conocimiento del Producto
+
+## ¿Qué es SalesPro CRM?
+
+SalesPro CRM es una plataforma de gestión de relaciones con clientes diseñada para pequeñas y medianas empresas. Permite gestionar contactos, oportunidades de venta, automatizar procesos y generar reportes de ventas.
+
+## Funcionalidades Principales
+
+### 1. Gestión de Contactos
+- Crea y administra una base de datos completa de clientes y prospectos
+- Guarda información como: nombre, email, teléfono, empresa, cargo, industria
+- Segmenta contactos por etiquetas personalizadas
+- Historial completo de interacciones (llamadas, emails, reuniones)
+- Importación masiva desde Excel o CSV
+
+**¿Cómo agregar un contacto?**
+1. Ve al menú "Contactos"
+2. Haz clic en "+ Nuevo Contacto"
+3. Completa los campos obligatorios: Nombre y Email
+4. Agrega información adicional (opcional)
+5. Guarda
+
+### 2. Pipeline de Ventas
+El pipeline te ayuda a visualizar todas tus oportunidades de venta en diferentes etapas:
+
+**Etapas del Pipeline:**
+- Prospecto: Cliente potencial identificado
+- Contactado: Primera interacción realizada
+- Calificado: Oportunidad validada
+- Propuesta: Cotización enviada
+- Negociación: Discusión de términos
+- Cerrado Ganado: Venta exitosa
+- Cerrado Perdido: Oportunidad no concretada
+
+**¿Cómo crear una oportunidad?**
+1. Ve al menú "Ventas" → "Pipeline"
+2. Clic en "+ Nueva Oportunidad"
+3. Selecciona el contacto asociado
+4. Define el valor estimado de la venta
+5. Asigna la etapa inicial (generalmente "Prospecto")
+6. Establece fecha de cierre esperada
+
+**Mover oportunidades:**
+- Arrastra y suelta las tarjetas entre columnas
+- O abre la oportunidad y cambia manualmente la etapa
+
+### 3. Automatizaciones
+Ahorra tiempo automatizando tareas repetitivas:
+
+**Emails Automáticos:**
+- Bienvenida a nuevos contactos
+- Seguimiento después de reuniones
+- Recordatorios de propuestas pendientes
+- Emails de cumpleaños
+
+**¿Cómo configurar un email automático?**
+1. Ve a "Configuración" → "Automatizaciones"
+2. Clic en "+ Nueva Automatización"
+3. Selecciona el disparador (ej: "Nuevo contacto creado")
+4. Define la acción (ej: "Enviar email")
+5. Personaliza el contenido del email
+6. Activa la automatización
+
+**Tareas Automáticas:**
+- Crear tarea de seguimiento 3 días después de una reunión
+- Recordatorio cuando una oportunidad lleva más de 7 días sin actividad
+- Notificar al gerente cuando una venta supera $10,000
+
+### 4. Reportes y Analytics
+
+**Dashboard Principal:**
+Visualiza métricas clave en tiempo real:
+- Total de oportunidades abiertas
+- Valor total del pipeline
+- Tasa de conversión mensual
+- Ventas cerradas del mes
+- Actividades completadas
+
+**Reportes Disponibles:**
+1. Reporte de Ventas por Período
+2. Rendimiento por Vendedor
+3. Análisis de Fuentes de Leads
+4. Tiempo Promedio de Cierre
+5. Productos Más Vendidos
+6. Pronóstico de Ventas
+
+**¿Cómo generar un reporte?**
+1. Ve a "Reportes"
+2. Selecciona el tipo de reporte
+3. Define el rango de fechas
+4. Aplica filtros si es necesario
+5. Clic en "Generar"
+6. Exporta a PDF o Excel
+
+### 5. Integraciones
+
+**Email:**
+- Gmail: Sincroniza emails automáticamente
+- Outlook: Integración bidireccional
+- Configura en: Configuración → Integraciones → Email
+
+**Comunicación:**
+- WhatsApp Business: Envía mensajes desde el CRM
+- Requiere cuenta de WhatsApp Business API
+
+**Otros:**
+- Zapier: Conecta con más de 5,000 aplicaciones
+- Webhooks: Integración personalizada con tu sistema
+- API REST: Documentación completa disponible
+
+### 6. Gestión de Equipos
+
+**Roles disponibles:**
+- Administrador: Acceso completo
+- Gerente de Ventas: Ve todo el equipo, no puede cambiar configuración
+- Vendedor: Solo ve sus propios contactos y oportunidades
+- Observador: Solo lectura
+
+**¿Cómo invitar usuarios?**
+1. Ve a "Configuración" → "Equipo"
+2. Clic en "+ Invitar Usuario"
+3. Ingresa email del usuario
+4. Selecciona el rol
+5. Envía invitación
+
+### 7. Aplicación Móvil
+
+Disponible para iOS y Android.
+
+**Funciones móviles:**
+- Ver y editar contactos
+- Actualizar etapas de oportunidades
+- Registrar llamadas y reuniones
+- Recibir notificaciones en tiempo real
+- Acceso offline a contactos recientes
+
+## Preguntas Frecuentes
+
+**¿Puedo importar mis contactos desde Excel?**
+Sí, ve a Contactos → Importar → Selecciona tu archivo CSV o Excel.
+
+**¿Hay límite de almacenamiento?**
+Depende del plan. Starter: 5GB, Professional: 50GB, Enterprise: Ilimitado.
+
+**¿Los datos están seguros?**
+Sí, usamos encriptación SSL/TLS y almacenamiento en la nube de Azure con backups diarios.
+
+**¿Puedo cancelar en cualquier momento?**
+Sí, sin penalizaciones. Tus datos se mantienen disponibles por 30 días.
+
+**¿Ofrecen capacitación?**
+Sí, plan Professional y Enterprise incluyen onboarding de 2 horas. Videos tutoriales disponibles para todos.

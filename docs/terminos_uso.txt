@@ -1,0 +1,277 @@
+# SalesPro CRM - Términos y Condiciones de Uso
+
+**Fecha de vigencia:** 15 de enero de 2024
+
+## 1. Aceptación de los Términos
+
+Al acceder y utilizar SalesPro CRM ("el Servicio"), aceptas estar legalmente vinculado por estos Términos y Condiciones. Si no estás de acuerdo, no utilices el Servicio.
+
+## 2. Descripción del Servicio
+
+SalesPro CRM es una plataforma SaaS (Software as a Service) de gestión de relaciones con clientes que incluye:
+- Gestión de contactos y empresas
+- Pipeline de ventas
+- Automatizaciones
+- Reportes y analytics
+- Integraciones con servicios de terceros
+- API REST
+
+## 3. Elegibilidad
+
+Debes:
+- Tener al menos 18 años
+- Tener capacidad legal para celebrar contratos
+- Proporcionar información veraz y completa al registrarte
+- Ser responsable de mantener la confidencialidad de tu cuenta
+
+## 4. Registro de Cuenta
+
+### 4.1 Creación de cuenta
+- Debes proporcionar un email válido
+- Eres responsable de todas las actividades bajo tu cuenta
+- Debes notificar inmediatamente cualquier uso no autorizado
+
+### 4.2 Seguridad
+- Mantén tu contraseña segura
+- No compartas credenciales de acceso
+- Recomendamos activar autenticación de dos factores (2FA)
+
+### 4.3 Cuenta organizacional
+- El administrador de la cuenta es responsable de gestionar usuarios
+- Los usuarios individuales deben cumplir estos términos
+- El administrador puede revocar acceso en cualquier momento
+
+## 5. Planes y Facturación
+
+### 5.1 Planes disponibles
+- **Starter:** $29/mes - 1 usuario, funcionalidades básicas
+- **Professional:** $79/mes - hasta 10 usuarios, funcionalidades avanzadas
+- **Enterprise:** $199/mes - usuarios ilimitados, soporte prioritario
+
+### 5.2 Facturación
+- Los pagos se procesan el primer día del mes
+- Se acepta tarjeta de crédito, débito y PayPal
+- Los planes anuales tienen 20% de descuento
+- Todas las tarifas se cobran en dólares estadounidenses (USD)
+
+### 5.3 Renovación automática
+- Tu suscripción se renueva automáticamente
+- Puedes cancelar antes de la fecha de renovación
+- No hay reembolsos por meses parciales
+
+### 5.4 Cambios de plan
+- Puedes cambiar de plan en cualquier momento
+- Upgrade: cambio inmediato, se prorratea el costo
+- Downgrade: cambio efectivo al inicio del siguiente ciclo
+
+### 5.5 Fallo de pago
+- Si un pago falla, se reintentará 3 veces en 7 días
+- Si no se resuelve, la cuenta se suspende
+- Datos se mantienen por 30 días antes de eliminación
+
+### 5.6 Impuestos
+- Los precios no incluyen impuestos locales (IVA, GST, etc.)
+- Los impuestos se calculan según tu ubicación
+- Eres responsable de pagar todos los impuestos aplicables
+
+## 6. Uso Aceptable
+
+### 6.1 Permitido
+- Usar el Servicio para gestionar relaciones con clientes legítimos
+- Integrar con tus propios sistemas mediante la API
+- Exportar tus datos en cualquier momento
+
+### 6.2 Prohibido
+- Revender o redistribuir el Servicio
+- Intentar acceder a cuentas de otros usuarios
+- Realizar ingeniería inversa del software
+- Enviar spam o contenido malicioso
+- Sobrecargar intencionalmente la infraestructura
+- Usar el Servicio para actividades ilegales
+- Almacenar contenido ilegal, difamatorio o que infrinja derechos de terceros
+
+### 6.3 Límites de uso
+Cada plan tiene límites:
+- Contactos máximos
+- Usuarios máximos
+- Llamadas a API por día
+- Almacenamiento
+
+Exceder consistentemente estos límites puede resultar en suspensión o upgrade obligatorio.
+
+## 7. Propiedad Intelectual
+
+### 7.1 Propiedad de SalesPro
+- El código, diseño, marca y contenido del Servicio son propiedad de SalesPro
+- Se te otorga una licencia limitada, no exclusiva, no transferible
+- No puedes copiar, modificar o crear trabajos derivados
+
+### 7.2 Tus datos
+- Tú eres dueño de todos los datos que ingresas
+- Nos otorgas licencia limitada para procesarlos y proveer el Servicio
+- Podemos usar datos agregados y anonimizados para mejoras
+
+### 7.3 Feedback
+- Cualquier sugerencia o feedback que proporciones puede ser usado libremente
+- No tenemos obligación de compensarte por ideas compartidas
+
+## 8. Privacidad y Seguridad
+
+### 8.1 Privacidad
+- Consulta nuestra Política de Privacidad completa
+- No vendemos tus datos personales
+- Cumplimos con GDPR, CCPA y regulaciones aplicables
+
+### 8.2 Seguridad
+- Implementamos medidas de seguridad estándar de la industria
+- No podemos garantizar seguridad absoluta
+- Reporta vulnerabilidades a: seguridad@salespro.com
+
+### 8.3 Backups
+- Realizamos backups diarios automáticos
+- No somos responsables por pérdida de datos debido a tu negligencia
+- Recomendamos exportar tus datos regularmente
+
+## 9. Integraciones de Terceros
+
+- Integraciones con Gmail, WhatsApp, etc. están sujetas a sus propios términos
+- No somos responsables por servicios de terceros
+- Puedes desconectar integraciones en cualquier momento
+- Revoca permisos desde las configuraciones de cada servicio
+
+## 10. API
+
+### 10.1 Acceso
+- API disponible en todos los planes
+- Requiere autenticación mediante API Key
+
+### 10.2 Límites
+- Límites de tasa según tu plan
+- Uso abusivo puede resultar en suspensión
+
+### 10.3 Cambios
+- Podemos modificar o deprecar endpoints con 30 días de aviso
+- Mantén tu integración actualizada
+
+## 11. Disponibilidad del Servicio
+
+### 11.1 SLA (Service Level Agreement)
+- **Starter:** 99.0% uptime (sin garantía)
+- **Professional:** 99.5% uptime garantizado
+- **Enterprise:** 99.9% uptime garantizado
+
+### 11.2 Mantenimiento
+- Mantenimiento programado se notifica con 48 horas de anticipación
+- Mantenimiento de emergencia puede ocurrir sin aviso
+
+### 11.3 Compensación por downtime
+- Solo para planes con SLA garantizado
+- Crédito proporcional al tiempo de inactividad
+- No aplica si el downtime es causado por terceros o caso fortuito
+
+## 12. Cancelación y Terminación
+
+### 12.1 Cancelación por tu parte
+- Puedes cancelar en cualquier momento desde Configuración
+- No hay penalizaciones por cancelación
+- No se reembolsan meses parciales
+- Acceso continúa hasta el final del período pagado
+
+### 12.2 Terminación por nuestra parte
+Podemos suspender o terminar tu cuenta si:
+- Violas estos Términos
+- Tu pago está atrasado más de 7 días
+- Detectamos actividad fraudulenta o ilegal
+- Lo requiere la ley
+
+### 12.3 Retención de datos
+- Después de cancelación, datos se mantienen 30 días
+- Puedes solicitar exportación en ese período
+- Después de 30 días, datos se eliminan permanentemente
+
+## 13. Limitación de Responsabilidad
+
+### 13.1 Exclusión de garantías
+EL SERVICIO SE PROPORCIONA "TAL CUAL" Y "SEGÚN DISPONIBILIDAD". NO GARANTIZAMOS:
+- Funcionamiento ininterrumpido o libre de errores
+- Resultados específicos de ventas
+- Compatibilidad con todos los sistemas
+
+### 13.2 Límite de responsabilidad
+NUESTRA RESPONSABILIDAD MÁXIMA NO EXCEDERÁ:
+- El monto pagado por ti en los últimos 12 meses
+- O $100 USD, lo que sea mayor
+
+NO SOMOS RESPONSABLES POR:
+- Pérdida de ganancias o oportunidades de negocio
+- Daños indirectos o consecuentes
+- Pérdida de datos causada por tu negligencia
+
+### 13.3 Excepciones
+Estas limitaciones no aplican donde la ley lo prohíba.
+
+## 14. Indemnización
+
+Aceptas indemnizarnos contra reclamos derivados de:
+- Tu uso del Servicio
+- Violación de estos Términos
+- Violación de derechos de terceros
+- Contenido que subas al Servicio
+
+## 15. Ley Aplicable y Jurisdicción
+
+- Estos términos se rigen por las leyes del Estado de California, USA
+- Cualquier disputa se resolverá en los tribunales de San Francisco, CA
+- Ambas partes aceptan jurisdicción exclusiva
+
+## 16. Arbitraje
+
+- Disputas menores a $10,000 se resolverán mediante arbitraje vinculante
+- Proceso de arbitraje según reglas de la AAA (American Arbitration Association)
+- Puedes optar por no participar en arbitraje dentro de 30 días de registro
+
+## 17. Modificaciones a los Términos
+
+- Podemos modificar estos términos en cualquier momento
+- Te notificaremos cambios materiales por email o en la aplicación
+- Continuar usando el Servicio después de cambios constituye aceptación
+- Si no estás de acuerdo, debes cancelar tu cuenta
+
+## 18. Transferencia
+
+- No puedes transferir tus derechos sin nuestro consentimiento
+- Podemos transferir nuestros derechos en caso de fusión o adquisición
+
+## 19. Divisibilidad
+
+Si alguna disposición es inválida, las demás permanecen en vigor.
+
+## 20. Renuncia
+
+No hacer valer algún derecho no constituye renuncia a ese derecho.
+
+## 21. Acuerdo Completo
+
+Estos términos, junto con la Política de Privacidad, constituyen el acuerdo completo.
+
+## 22. Contacto
+
+Para preguntas sobre estos términos:
+- Email: legal@salespro.com
+- Dirección: SalesPro Inc., 123 Business Ave, San Francisco, CA 94102, USA
+- Teléfono: +1 (555) 123-4567
+
+## 23. Disposiciones Específicas por Plan
+
+### Plan Enterprise
+- Disponibilidad de DPA (Data Processing Agreement)
+- SLA de 99.9%
+- Soporte prioritario 24/7
+- Opción de contrato personalizado
+
+### Clientes Enterprise pueden negociar términos personalizados contactando a: enterprise@salespro.com
+
+---
+
+**Última revisión:** 15 de enero de 2024
+**Versión:** 2.1
