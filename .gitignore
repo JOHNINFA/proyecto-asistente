@@ -8,3 +8,11 @@ screenshots/
 
 # Editor
 .vscode/
+
+# AI Assistants metadata/settings
+PARA_IA.md
+.gemini/
+.kiro/
+.claude/
+.cursor/
+.anthropic/
