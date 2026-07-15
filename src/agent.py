@@ -1,26 +1,24 @@
 import os
 from pathlib import Path
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 from langchain.chains import RetrievalQA
-from langchain_community.vectorstores import FAISS
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_community.retrievers import BM25Retriever
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.document_loaders import TextLoader, CSVLoader
-import pandas as pd
+from langchain_community.document_loaders import TextLoader, CSVLoader, PyPDFLoader
 
 class CRMAgent:
-    def __init__(self, api_key: str):
-        self.api_key = api_key
-        self.llm = ChatGoogleGenerativeAI(
-            model="gemini-pro",
-            google_api_key=api_key,
+    def __init__(self, deepseek_api_key: str, google_api_key: str = None):
+        self.deepseek_api_key = deepseek_api_key
+        
+        # Inicializar DeepSeek Chat usando el cliente de OpenAI compatible
+        self.llm = ChatOpenAI(
+            model="deepseek-chat",
+            openai_api_key=deepseek_api_key,
+            openai_api_base="https://api.deepseek.com/v1",
             temperature=0.3
         )
-        self.embeddings = GoogleGenerativeAIEmbeddings(
-            model="models/embedding-001",
-            google_api_key=api_key
-        )
-        self.vectorstore = None
+        
+        self.retriever = None
         self.qa_chain = None
         
     def load_documents(self, docs_path: str = "docs"):
@@ -31,6 +29,11 @@ class CRMAgent:
         # Cargar archivos .txt
         for txt_file in docs_dir.glob("*.txt"):
             loader = TextLoader(str(txt_file), encoding='utf-8')
+            documents.extend(loader.load())
+        
+        # Cargar archivos .pdf
+        for pdf_file in docs_dir.glob("*.pdf"):
+            loader = PyPDFLoader(str(pdf_file))
             documents.extend(loader.load())
         
         # Cargar archivo CSV
@@ -46,14 +49,14 @@ class CRMAgent:
         )
         splits = text_splitter.split_documents(documents)
         
-        # Crear vectorstore
-        self.vectorstore = FAISS.from_documents(splits, self.embeddings)
+        # Crear retriever BM25 (no necesita embeddings ni API keys)
+        self.retriever = BM25Retriever.from_documents(splits, k=3)
         
         # Crear cadena de Q&A
         self.qa_chain = RetrievalQA.from_chain_type(
             llm=self.llm,
             chain_type="stuff",
-            retriever=self.vectorstore.as_retriever(search_kwargs={"k": 3}),
+            retriever=self.retriever,
             return_source_documents=True
         )
         

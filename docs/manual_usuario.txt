@@ -1,0 +1,298 @@
+MANUAL DE USUARIO - SALESPRO CRM
+=================================
+
+1. GESTIÓN DE CONTACTOS
+========================
+
+1.1 Cómo agregar un nuevo contacto
+-----------------------------------
+Para crear un contacto en SalesPro CRM:
+
+1. Ir al menú lateral izquierdo y hacer clic en "Contactos"
+2. Hacer clic en el botón "+ Nuevo Contacto" (esquina superior derecha)
+3. Completar los campos requeridos:
+   - Nombre completo (obligatorio)
+   - Email (obligatorio)
+   - Teléfono
+   - Empresa
+   - Cargo
+   - Etiquetas (para categorizar)
+4. Hacer clic en "Guardar"
+
+El contacto aparecerá inmediatamente en tu lista de contactos activos.
+
+1.2 Editar un contacto existente
+---------------------------------
+1. Ir a "Contactos" en el menú lateral
+2. Buscar el contacto usando la barra de búsqueda o filtrando por etiquetas
+3. Hacer clic sobre el nombre del contacto
+4. Clic en el botón "Editar" (ícono de lápiz)
+5. Modificar los campos necesarios
+6. Guardar cambios
+
+1.3 Eliminar un contacto
+-------------------------
+1. Abrir la ficha del contacto
+2. Hacer clic en el menú "..." (tres puntos) en la esquina superior derecha
+3. Seleccionar "Eliminar contacto"
+4. Confirmar la acción
+
+Nota: Los contactos eliminados se mueven a la papelera durante 30 días antes de borrarse definitivamente.
+
+1.4 Importar contactos masivamente
+-----------------------------------
+Para importar múltiples contactos desde un archivo:
+
+1. Ir a "Contactos" > "Importar" (botón con ícono de flecha hacia arriba)
+2. Seleccionar el archivo CSV o Excel
+3. Mapear las columnas del archivo con los campos de SalesPro
+4. Revisar la vista previa
+5. Hacer clic en "Importar contactos"
+
+Formato requerido del CSV: nombre, email, teléfono, empresa, cargo
+
+
+2. GESTIÓN DE OPORTUNIDADES DE VENTA
+=====================================
+
+2.1 Crear una nueva oportunidad
+--------------------------------
+1. Ir al menú "Embudo Ventas" (Pipeline)
+2. Hacer clic en "+ Nueva Oportunidad"
+3. Completar:
+   - Nombre del negocio
+   - Contacto asociado
+   - Valor estimado
+   - Fecha de cierre esperada
+   - Etapa inicial (Lead, Contactado, Propuesta, Negociación, Ganado)
+   - Probabilidad de éxito (%)
+4. Guardar
+
+2.2 Mover oportunidades entre etapas
+-------------------------------------
+- Método 1: Arrastrar y soltar la tarjeta entre columnas del embudo
+- Método 2: Abrir la oportunidad > Cambiar el campo "Etapa" > Guardar
+
+Cuando una oportunidad llega a "Ganado", se registra automáticamente en los ingresos mensuales.
+
+2.3 Cerrar oportunidad como perdida
+------------------------------------
+1. Abrir la oportunidad
+2. Cambiar etapa a "Perdido"
+3. Agregar motivo de pérdida (opcional pero recomendado)
+4. Guardar
+
+
+3. AUTOMATIZACIONES
+===================
+
+3.1 Crear una automatización
+-----------------------------
+Las automatizaciones permiten ejecutar acciones automáticas cuando ocurren eventos.
+
+Pasos:
+1. Ir a "Integraciones" > "Automatizaciones"
+2. Clic en "+ Nueva Automatización"
+3. Definir el disparador (trigger):
+   - Nuevo contacto creado
+   - Oportunidad cambia de etapa
+   - Contacto sin actividad por X días
+   - Email recibido
+4. Configurar las acciones:
+   - Enviar email automático
+   - Asignar a un vendedor
+   - Crear tarea de seguimiento
+   - Cambiar etiqueta
+   - Actualizar campo personalizado
+5. Activar la automatización
+
+3.2 Ejemplos de automatizaciones útiles
+----------------------------------------
+- Cuando un contacto nuevo se crea → enviar email de bienvenida
+- Cuando una oportunidad llega a "Propuesta" → crear tarea "Llamar en 2 días"
+- Cuando un contacto no tiene actividad por 30 días → asignar tarea de reactivación
+- Cuando se gana un negocio → enviar email de agradecimiento y solicitar referencia
+
+
+4. REPORTES Y ANALÍTICAS
+=========================
+
+4.1 Acceder al Dashboard
+-------------------------
+El Dashboard principal muestra:
+- Ingresos mensuales (MRR)
+- Contactos activos
+- Tasa de conversión
+- Rendimiento comercial por etapa del embudo
+
+Para personalizar:
+1. Ir a "Dashboard"
+2. Clic en "Personalizar"
+3. Arrastrar widgets o agregar nuevos gráficos
+4. Guardar vista personalizada
+
+4.2 Generar reportes personalizados
+------------------------------------
+1. Ir a "Reportes" en el menú
+2. Seleccionar tipo de reporte:
+   - Ventas por periodo
+   - Desempeño por vendedor
+   - Fuentes de lead más efectivas
+   - Tiempo promedio de cierre
+3. Configurar filtros y rango de fechas
+4. Exportar a PDF o Excel si necesario
+
+
+5. INTEGRACIONES
+================
+
+5.1 Conectar con email (Gmail/Outlook)
+---------------------------------------
+1. Ir a "Integraciones" > "Email"
+2. Seleccionar tu proveedor (Gmail u Outlook)
+3. Autorizar el acceso
+4. Sincronización automática: todos los emails con contactos del CRM se registrarán
+
+5.2 Integrar con WhatsApp Business
+-----------------------------------
+1. Ir a "Integraciones" > "WhatsApp"
+2. Escanear código QR con tu WhatsApp Business
+3. Todos los chats se vincularán automáticamente con contactos existentes
+
+5.3 Otras integraciones disponibles
+------------------------------------
+- Zapier (conectar con +3000 apps)
+- Calendly (agendar reuniones)
+- Slack (notificaciones)
+- Google Calendar
+- Mailchimp
+
+
+6. CONFIGURACIÓN DE CUENTA
+===========================
+
+6.1 Cambiar contraseña
+-----------------------
+1. Clic en tu avatar (esquina superior derecha)
+2. "Configuración" > "Seguridad"
+3. "Cambiar contraseña"
+4. Ingresar contraseña actual y nueva
+5. Guardar
+
+6.2 Configurar notificaciones
+------------------------------
+1. "Configuración" > "Notificaciones"
+2. Activar/desactivar:
+   - Nuevos contactos
+   - Cambios en oportunidades
+   - Tareas vencidas
+   - Recordatorios de seguimiento
+3. Elegir canal: email, push, SMS
+
+6.3 Invitar miembros del equipo
+--------------------------------
+1. "Configuración" > "Equipo"
+2. Clic en "+ Invitar miembro"
+3. Ingresar email del usuario
+4. Asignar rol:
+   - Administrador (acceso total)
+   - Vendedor (solo sus contactos y oportunidades)
+   - Viewer (solo lectura)
+5. Enviar invitación
+
+
+7. TAREAS Y SEGUIMIENTOS
+=========================
+
+7.1 Crear una tarea
+--------------------
+1. Desde cualquier contacto u oportunidad, clic en "Nueva tarea"
+2. Completar:
+   - Descripción de la tarea
+   - Fecha de vencimiento
+   - Asignar a un usuario
+   - Prioridad (Alta/Media/Baja)
+3. Guardar
+
+Las tareas aparecen en tu lista de pendientes y recibes notificaciones el día del vencimiento.
+
+7.2 Registrar actividades realizadas
+-------------------------------------
+Para llevar historial de interacciones:
+1. Abrir ficha del contacto
+2. Sección "Actividades" > "+ Registrar actividad"
+3. Seleccionar tipo: Llamada, Email, Reunión, Nota
+4. Describir el resultado
+5. Guardar
+
+Todo el historial queda registrado en la línea de tiempo del contacto.
+
+
+8. SOPORTE Y AYUDA
+==================
+
+8.1 Centro de ayuda
+-------------------
+Accede desde el ícono "?" en la esquina superior derecha.
+Incluye:
+- Tutoriales en video
+- Guías paso a paso
+- Preguntas frecuentes
+- Base de conocimiento
+
+8.2 Contactar soporte
+---------------------
+- Chat en vivo: disponible de lunes a viernes 9:00-18:00 (hora local)
+- Email: soporte@salespro.com (respuesta en 24h hábiles)
+- Teléfono: +1-800-SALES-PRO (solo planes Professional y Enterprise)
+
+8.3 Capacitación y onboarding
+------------------------------
+Planes Professional y Enterprise incluyen:
+- Sesión de onboarding de 1 hora
+- Capacitación del equipo (hasta 10 usuarios)
+- Soporte prioritario los primeros 30 días
+
+
+9. ATAJOS DE TECLADO
+=====================
+
+Para trabajar más rápido:
+- Ctrl + K: Búsqueda rápida de contactos
+- Ctrl + N: Nuevo contacto
+- Ctrl + Shift + N: Nueva oportunidad
+- / : Activar barra de búsqueda
+- Esc: Cerrar ventanas modales
+- G + D: Ir al Dashboard
+- G + C: Ir a Contactos
+- G + P: Ir al Pipeline (Embudo)
+
+
+10. BUENAS PRÁCTICAS
+=====================
+
+10.1 Mantén tu CRM actualizado
+-------------------------------
+- Registra todas las interacciones el mismo día
+- Actualiza las etapas de oportunidades semanalmente
+- Limpia contactos duplicados mensualmente
+- Revisa y completa campos vacíos regularmente
+
+10.2 Usa etiquetas consistentemente
+------------------------------------
+Crea un sistema de etiquetas claro:
+- Por industria: "Tecnología", "Retail", "Educación"
+- Por fuente: "Web", "Referido", "Evento"
+- Por interés: "Producto A", "Producto B"
+
+10.3 Automatiza tareas repetitivas
+-----------------------------------
+Si haces algo más de 3 veces al mes, considera crear una automatización para ahorrar tiempo.
+
+10.4 Revisa métricas semanalmente
+----------------------------------
+Dedica 15 minutos cada lunes a revisar:
+- Oportunidades estancadas
+- Tareas pendientes
+- Tasa de conversión de la semana anterior
+- Contactos que necesitan seguimiento
