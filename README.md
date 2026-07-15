@@ -1,280 +1,487 @@
-# 🤖 CRM Intelligence - Agente IA para SalesPro CRM
+# 🤖 CRM Intelligence - Alura Challenge
 
-Agente inteligente basado en IA que responde preguntas sobre SalesPro CRM utilizando RAG (Retrieval-Augmented Generation) con LangChain y Gemini.
+> Sistema CRM inteligente con Agente IA conversacional usando RAG (Retrieval Augmented Generation)
 
-## 📋 Descripción del Proyecto
+![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)
+![React](https://img.shields.io/badge/React-19.2-61DAFB.svg)
+![LangChain](https://img.shields.io/badge/LangChain-0.1-orange.svg)
+![DeepSeek](https://img.shields.io/badge/DeepSeek-Chat-purple.svg)
 
-Este proyecto implementa un asistente virtual que puede responder preguntas sobre:
-- Funcionalidades del CRM
-- Planes y precios
-- Políticas de privacidad
-- Términos y condiciones
-- Preguntas frecuentes de soporte
+---
 
-El agente utiliza documentación real del producto para proporcionar respuestas precisas y contextualizadas.
+## 📋 Descripción
+
+**SalesPro CRM Intelligence** es un sistema completo de gestión de relaciones con clientes (CRM) potenciado por un agente de inteligencia artificial que responde preguntas en tiempo real utilizando documentos PDF, TXT y CSV.
+
+### ✨ Características principales
+
+- 🤖 **Agente IA conversacional** con RAG usando DeepSeek
+- 📄 **Base de conocimiento** con 5 PDFs + 5 TXT + 1 CSV
+- 🎨 **Interfaz moderna** React con dashboard interactivo
+- 📊 **Dashboard CRM** con métricas, contactos y pipeline
+- ➕ **Crear contactos** con modal funcional
+- 🔍 **Búsqueda BM25** sin necesidad de embeddings
+- 📚 **Fuentes citadas** en cada respuesta del agente
+- 🌐 **API REST** documentada con FastAPI
+
+---
 
 ## 🏗️ Arquitectura
 
 ```
-┌─────────────┐
-│  Usuario    │
-└──────┬──────┘
-       │
-       ▼
-┌─────────────────┐
-│  Frontend Web   │ (HTML/JS)
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│   FastAPI       │
-│   (API REST)    │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│   LangChain     │
-│   Agent (RAG)   │
-└────────┬────────┘
-         │
-    ┌────┴────┐
-    ▼         ▼
-┌────────┐ ┌──────┐
-│ FAISS  │ │Gemini│
-│Vector  │ │ Pro  │
-│Store   │ │ LLM  │
-└────────┘ └──────┘
-    ▲
-    │
-┌───┴────┐
-│  Docs  │
-│ (PDF/  │
-│  CSV)  │
-└────────┘
+┌────────────────────────────────────────────────┐
+│           USUARIO (Navegador)                  │
+└───────────────────┬────────────────────────────┘
+                    │
+                    ↓
+┌────────────────────────────────────────────────┐
+│         FRONTEND (React + Vite)                │
+│  - Dashboard con métricas                      │
+│  - Gestión de contactos                        │
+│  - Pipeline de ventas (Kanban)                 │
+│  - Chat con Agente IA                          │
+│  Puerto: 5173                                  │
+└───────────────────┬────────────────────────────┘
+                    │ HTTP REST
+                    ↓
+┌────────────────────────────────────────────────┐
+│         BACKEND (FastAPI)                      │
+│  POST /query  → Consultas al agente            │
+│  GET  /health → Health check                   │
+│  Puerto: 8000                                  │
+└───────────────────┬────────────────────────────┘
+                    │
+                    ↓
+┌────────────────────────────────────────────────┐
+│       AGENTE IA (LangChain + DeepSeek)         │
+│  ┌──────────────┐      ┌──────────────┐       │
+│  │  BM25        │ ───→ │  DeepSeek    │       │
+│  │  Retriever   │      │  LLM         │       │
+│  │  (k=3)       │      │ (temp: 0.3)  │       │
+│  └──────────────┘      └──────────────┘       │
+└───────────────────┬────────────────────────────┘
+                    │
+                    ↓
+┌────────────────────────────────────────────────┐
+│      BASE DE CONOCIMIENTO (docs/)              │
+│  📄 5 PDFs  +  📝 5 TXT  +  📊 1 CSV           │
+│  Total: 21 documentos indexados                │
+└────────────────────────────────────────────────┘
 ```
 
-### Componentes:
+---
 
-1. **Frontend**: Interfaz web simple para interactuar con el agente
-2. **FastAPI**: API REST que expone el endpoint `/query`
-3. **LangChain Agent**: Implementa RAG para recuperar contexto relevante
-4. **FAISS VectorStore**: Base de datos vectorial para búsqueda semántica
-5. **Gemini Pro**: Modelo de lenguaje de Google para generar respuestas
-6. **Documentos**: Base de conocimiento en formato TXT y CSV
+## 🚀 Tecnologías
 
-## 🚀 Tecnologías Utilizadas
-
+### Backend
 - **Python 3.10+**
-- **LangChain**: Framework para aplicaciones con LLM
-- **Google Gemini Pro**: Modelo de lenguaje
-- **FastAPI**: Framework web moderno y rápido
-- **FAISS**: Búsqueda de similitud vectorial
-- **Pandas**: Procesamiento de datos CSV
-- **Uvicorn**: Servidor ASGI
+- **FastAPI** - Framework web moderno
+- **LangChain** - Orquestación de LLM
+- **DeepSeek** - Modelo de lenguaje (compatible con OpenAI API)
+- **BM25Retriever** - Búsqueda léxica (sin embeddings)
+- **PyPDF** - Lectura de PDFs
+- **Uvicorn** - Servidor ASGI
+
+### Frontend
+- **React 19.2** - UI moderna
+- **Vite 8** - Build tool rápido
+- **Lucide React** - Iconos
+- **CSS Modules** - Estilos
+
+---
 
 ## 📁 Estructura del Proyecto
 
 ```
-crm-intelligence/
-├── docs/                          # Documentación del CRM
-│   ├── base_conocimiento_producto.txt
-│   ├── faq_soporte.txt
-│   ├── politica_privacidad.txt
-│   ├── terminos_uso.txt
+proyecto-asistente/
+│
+├── docs/                           # 📚 Base de Conocimiento
+│   ├── base_conocimiento_producto.pdf + .txt
+│   ├── faq_soporte.pdf + .txt
+│   ├── manual_usuario.pdf + .txt   ⭐ Guía completa
+│   ├── politica_privacidad.pdf + .txt
+│   ├── terminos_uso.pdf + .txt
 │   └── planes_precios.csv
-├── src/                           # Código fuente
-│   ├── agent.py                   # Lógica del agente IA
-│   └── api.py                     # API FastAPI
-├── templates/                     # Templates HTML
-│   └── index.html                 # Interfaz web
-├── requirements.txt               # Dependencias Python
-├── .env.example                   # Ejemplo de variables de entorno
-└── README.md                      # Este archivo
+│
+├── src/                            # 🐍 Backend Python
+│   ├── agent.py                    # Agente RAG principal
+│   └── api.py                      # API REST FastAPI
+│
+├── frontend/                       # ⚛️ Frontend React
+│   ├── src/
+│   │   ├── App.jsx                # CRM completo
+│   │   ├── App.css
+│   │   ├── main.jsx
+│   │   └── index.css
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.js
+│
+├── scripts/
+│   └── txt_to_pdf.py              # Conversor TXT → PDF
+│
+├── templates/
+│   └── index.html                 # HTML básico
+│
+├── .env                            # 🔐 Variables de entorno
+├── .env.example
+├── requirements.txt
+├── test_agent.py
+├── README.md                       # 📖 Este archivo
+└── DOCUMENTACION.md                # 📘 Docs técnica completa
 ```
 
-## 🛠️ Instalación y Configuración
+---
 
-### 1. Clonar el repositorio
+## 🛠️ Instalación
+
+### 1️⃣ Requisitos previos
+
+- Python 3.10+
+- Node.js 18+
+- npm o yarn
+- Cuenta en [DeepSeek](https://platform.deepseek.com/) (para API key)
+
+### 2️⃣ Clonar repositorio
 
 ```bash
-git clone <tu-repositorio>
-cd crm-intelligence
+git clone <tu-repo>
+cd proyecto-asistente
 ```
 
-### 2. Crear entorno virtual
+### 3️⃣ Backend: Configurar Python
 
 ```bash
-python -m venv venv
+# Crear entorno virtual
+python3 -m venv venv
 source venv/bin/activate  # Linux/Mac
-# o
-venv\Scripts\activate     # Windows
-```
+# venv\Scripts\activate   # Windows
 
-### 3. Instalar dependencias
-
-```bash
+# Instalar dependencias
 pip install -r requirements.txt
-```
 
-### 4. Configurar variables de entorno
-
-```bash
+# Configurar variables de entorno
 cp .env.example .env
+nano .env  # Agregar tu DEEPSEEK_API_KEY
 ```
 
-Edita `.env` y agrega tu API key de Google Gemini:
-
+**Contenido de `.env`:**
+```bash
+DEEPSEEK_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxx
 ```
-GOOGLE_API_KEY=tu_api_key_aqui
-```
 
-**¿Cómo obtener la API key?**
-1. Ve a [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Crea una nueva API key
-3. Cópiala en el archivo `.env`
-
-### 5. Ejecutar la aplicación
+### 4️⃣ Frontend: Configurar React
 
 ```bash
-cd src
-python api.py
+cd frontend
+npm install
 ```
 
-La aplicación estará disponible en: `http://localhost:8000`
-
-## 💬 Ejemplos de Uso
-
-### Interfaz Web
-Abre tu navegador en `http://localhost:8000` y haz preguntas como:
-
-**Pregunta:** "¿Cómo agrego un nuevo contacto?"
-**Respuesta:** "Para agregar un contacto nuevo: 1. Ve al menú 'Contactos', 2. Haz clic en '+ Nuevo Contacto'..."
-
-**Pregunta:** "¿Cuánto cuesta el plan Professional?"
-**Respuesta:** "El plan Professional cuesta $79/mes o $758/año (con 20% de descuento)..."
-
-**Pregunta:** "¿Qué automatizaciones puedo configurar?"
-**Respuesta:** "Puedes configurar automatizaciones como emails automáticos de bienvenida..."
-
-### API REST
-
-**Endpoint:** `POST /query`
+### 5️⃣ Verificar documentos
 
 ```bash
-curl -X POST "http://localhost:8000/query" \
+ls -lh docs/
+# Debe mostrar: 5 PDFs + 5 TXT + 1 CSV (11 archivos)
+```
+
+---
+
+## 🚀 Ejecutar el Proyecto
+
+### Opción A: Dos terminales (Recomendado)
+
+**Terminal 1 - Backend:**
+```bash
+source venv/bin/activate
+uvicorn src.api:app --reload --host 0.0.0.0 --port 8000
+```
+
+Verás:
+```
+✅ 21 documentos cargados exitosamente
+INFO: Uvicorn running on http://0.0.0.0:8000
+```
+
+**Terminal 2 - Frontend:**
+```bash
+cd frontend
+npm run dev
+```
+
+Verás:
+```
+VITE v8.1.1  ready in 234 ms
+
+➜  Local:   http://localhost:5173/
+```
+
+### Opción B: Script único (próximamente)
+
+```bash
+./start.sh  # Inicia backend + frontend
+```
+
+---
+
+## 💻 Uso del Sistema
+
+### 1. Abrir en navegador
+
+```
+http://localhost:5173
+```
+
+### 2. Explorar el CRM
+
+#### 📊 Dashboard
+- Ver métricas: MRR, contactos activos, tasa de conversión
+- Gráfico de rendimiento comercial
+- Preguntas rápidas al agente
+
+#### 👥 Contactos
+- Tabla de contactos con filtros
+- **Botón "+ Nuevo Contacto"** ⭐
+- Crear contactos con modal:
+  - Nombre (obligatorio)
+  - Email (obligatorio)
+  - Plan (Starter/Professional/Enterprise)
+  - Estado (Activo/Inactivo)
+
+#### 🔄 Embudo de Ventas
+- Kanban board: Lead → Contactado → Propuesta → Negociación → Ganado
+- Arrastrar/mover deals entre etapas
+
+#### 🔌 Integraciones
+- Conectar/desconectar: Gmail, WhatsApp, Stripe, Outlook
+
+#### 💳 Planes y Costos
+- Ver precios: Starter ($29), Professional ($79), Enterprise ($199)
+- Consultar al agente sobre cada plan
+
+### 3. Chat con Agente IA
+
+- Clic en botón flotante (esquina inferior derecha)
+- Escribir pregunta en el chat
+- Ver respuesta + fuentes citadas
+
+#### Ejemplos de preguntas:
+
+```
+¿Cómo agrego un nuevo contacto?
+¿Cuánto cuesta el plan Professional?
+¿Qué automatizaciones puedo configurar?
+¿Cómo integro Gmail con el CRM?
+¿Cuáles son los límites del plan Starter?
+¿Dónde se almacenan mis datos?
+```
+
+---
+
+## 📡 API REST
+
+### Base URL
+```
+http://localhost:8000
+```
+
+### Endpoints
+
+#### POST /query
+
+**Request:**
+```bash
+curl -X POST http://localhost:8000/query \
   -H "Content-Type: application/json" \
-  -d '{"question": "¿Cómo integro Gmail con el CRM?"}'
+  -d '{"question": "¿Cómo creo una automatización?"}'
 ```
 
-**Respuesta:**
+**Response:**
 ```json
 {
-  "question": "¿Cómo integro Gmail con el CRM?",
-  "answer": "Para integrar Gmail: 1. Ve a Configuración → Integraciones...",
-  "sources": ["base_conocimiento_producto.txt"]
+  "question": "¿Cómo creo una automatización?",
+  "answer": "Para crear una automatización en SalesPro:\n1. Ve a 'Integraciones' > 'Automatizaciones'\n2. Haz clic en '+ Nueva Automatización'\n3. Define el disparador (trigger)...",
+  "sources": [
+    "docs/manual_usuario.pdf",
+    "docs/base_conocimiento_producto.pdf"
+  ]
 }
 ```
 
-## 🌐 Deploy en Azure
+#### GET /health
 
-### Opción 1: Azure App Service (Recomendado)
-
-1. **Crear App Service:**
 ```bash
-az webapp up --name crm-intelligence --runtime "PYTHON:3.10"
-```
-
-2. **Configurar variables de entorno:**
-```bash
-az webapp config appsettings set --name crm-intelligence \
-  --settings GOOGLE_API_KEY=tu_api_key
-```
-
-3. **Deploy automático desde GitHub:**
-- Conecta tu repositorio en Azure Portal
-- Configura CI/CD con GitHub Actions
-
-### Opción 2: Azure Container Instances
-
-1. **Crear Dockerfile** (ya incluido en el proyecto)
-2. **Build y push a Azure Container Registry**
-3. **Deploy en ACI**
-
-### URL del proyecto desplegado:
-🔗 `https://crm-intelligence.azurewebsites.net`
-
-## 📸 Capturas de Pantalla
-
-### Interfaz Principal
-![Interfaz](screenshots/interfaz.png)
-
-### Ejemplo de Conversación
-![Conversación](screenshots/conversation.png)
-
-## 🧪 Testing
-
-### Prueba local:
-```bash
-# Terminal 1: Iniciar servidor
-python src/api.py
-
-# Terminal 2: Hacer pruebas
 curl http://localhost:8000/health
 ```
 
-### Prueba de queries:
-```python
-from src.agent import CRMAgent
-
-agent = CRMAgent(api_key="tu_api_key")
-agent.load_documents()
-result = agent.query("¿Cuáles son los planes disponibles?")
-print(result["answer"])
+**Response:**
+```json
+{
+  "status": "healthy",
+  "agent": "ready"
+}
 ```
 
-## 📊 Métricas del Proyecto
+#### GET /docs
 
-- **Documentos procesados:** 5 archivos (4 TXT + 1 CSV)
-- **Vectores generados:** ~150 chunks
-- **Tiempo de respuesta:** ~2-3 segundos
-- **Modelo:** Gemini Pro (gratuito)
-- **Precisión:** Alta (basada en documentación real)
+Documentación interactiva Swagger:
+```
+http://localhost:8000/docs
+```
 
-## 🔒 Seguridad
+---
 
-- ✅ API key almacenada en variables de entorno
-- ✅ No se exponen datos sensibles en logs
-- ✅ CORS configurado para producción
-- ✅ Rate limiting (en producción)
+## 📚 Base de Conocimiento
 
-## 🤝 Contribuciones
+| Documento | Formato | Contenido |
+|-----------|---------|-----------|
+| `base_conocimiento_producto` | PDF + TXT | Funcionalidades, automatizaciones, reportes |
+| `faq_soporte` | PDF + TXT | Preguntas frecuentes de soporte |
+| `manual_usuario` | PDF + TXT | **Guía completa paso a paso** ⭐ |
+| `politica_privacidad` | PDF + TXT | Seguridad y almacenamiento de datos |
+| `terminos_uso` | PDF + TXT | Términos legales y condiciones |
+| `planes_precios` | CSV | Tabla con planes y precios |
 
-Este es un proyecto personal para el challenge. Si deseas contribuir:
+**Total:** 21 documentos indexados (~150-200 chunks)
 
-1. Fork el proyecto
-2. Crea una rama (`git checkout -b feature/mejora`)
-3. Commit tus cambios (`git commit -m 'Agregar mejora'`)
-4. Push a la rama (`git push origin feature/mejora`)
-5. Abre un Pull Request
+---
+
+## 🧪 Testing
+
+### Test del agente
+
+```bash
+python test_agent.py
+```
+
+Ejecuta 3 preguntas de prueba y muestra respuestas.
+
+### Test de API
+
+```bash
+# Health check
+curl http://localhost:8000/health
+
+# Query de prueba
+curl -X POST http://localhost:8000/query \
+  -H "Content-Type: application/json" \
+  -d '{"question": "¿Cuánto cuesta el plan Starter?"}'
+```
+
+---
+
+## 🔧 Troubleshooting
+
+### Backend no inicia
+
+**Error:** `DEEPSEEK_API_KEY no encontrada`
+
+```bash
+# Verifica .env
+cat .env
+
+# Si no existe:
+echo "DEEPSEEK_API_KEY=sk-xxxxxxxxx" > .env
+```
+
+### Frontend no conecta
+
+**Error:** "No pude conectarme con el servidor"
+
+```bash
+# Verifica backend
+curl http://localhost:8000/health
+
+# Si no responde, inicia backend
+uvicorn src.api:app --reload
+```
+
+### Documentos no cargan
+
+```bash
+# Verifica archivos
+ls -lh docs/
+
+# Regenera PDFs si faltan
+python scripts/txt_to_pdf.py
+```
+
+---
+
+## 📊 Métricas
+
+- **Documentos:** 21 cargados
+- **Chunks:** ~150-200 fragmentos
+- **Tiempo de respuesta:** ~2-5 segundos
+- **Búsqueda BM25:** ~50-100ms
+- **Modelo:** DeepSeek Chat
+- **Idioma:** Español
+
+---
+
+## 🚀 Próximas Mejoras
+
+### Backend
+- [ ] Embeddings semánticos (ChromaDB)
+- [ ] Caché de respuestas frecuentes
+- [ ] Rate limiting
+- [ ] Logging estructurado
+
+### Frontend
+- [ ] Persistencia de contactos (API)
+- [ ] Exportar contactos a CSV
+- [ ] Modo oscuro/claro
+- [ ] Autenticación de usuarios
+
+### Agente IA
+- [ ] Historial persistente
+- [ ] Sugerencias proactivas
+- [ ] Multi-agente (ventas, soporte)
+
+---
 
 ## 📝 Licencia
 
-MIT License - ver archivo LICENSE para más detalles
+Este proyecto fue desarrollado como parte del Challenge de Alura Latam.
+
+---
 
 ## 👨‍💻 Autor
 
 **Tu Nombre**
 - GitHub: [@tu-usuario](https://github.com/tu-usuario)
 - LinkedIn: [Tu Perfil](https://linkedin.com/in/tu-perfil)
-- Email: tu@email.com
-
-## 🙏 Agradecimientos
-
-- Oracle Cloud Infrastructure (OCI) por el challenge
-- Google por Gemini Pro
-- LangChain por el framework
-- La comunidad de desarrolladores
 
 ---
 
-**Nota:** Este proyecto fue desarrollado como parte del challenge de Oracle + Alura Latam.
+## 🙏 Agradecimientos
+
+- **Alura Latam** por el Challenge
+- **DeepSeek** por el modelo de lenguaje
+- **LangChain** por el framework RAG
+- Comunidad open source
+
+---
+
+## 📖 Documentación Completa
+
+Para más detalles técnicos, consulta:
+
+👉 **[DOCUMENTACION.md](./DOCUMENTACION.md)** - Guía técnica completa
+
+---
+
+**⚡ Quick Start:**
+```bash
+# Backend
+source venv/bin/activate && uvicorn src.api:app --reload
+
+# Frontend (otra terminal)
+cd frontend && npm run dev
+
+# Abrir: http://localhost:5173
+```
+
+---
+
+**Última actualización:** Julio 15, 2026
