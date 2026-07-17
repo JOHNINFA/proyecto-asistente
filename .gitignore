@@ -1,4 +1,6 @@
 venv/
+__pycache__/
+*.pyc
 
 # CRM Intelligence specific
 *.faiss

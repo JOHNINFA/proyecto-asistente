@@ -28,16 +28,20 @@ app.add_middleware(
 )
 
 # Inicializar agente
-api_key = os.getenv("GOOGLE_API_KEY")
-if not api_key:
-    raise ValueError("GOOGLE_API_KEY no encontrada en las variables de entorno")
+deepseek_api_key = os.getenv("DEEPSEEK_API_KEY")
 
-agent = CRMAgent(api_key)
+if not deepseek_api_key:
+    raise ValueError("DEEPSEEK_API_KEY no encontrada en las variables de entorno")
+
+agent = CRMAgent(deepseek_api_key=deepseek_api_key)
 
 # Cargar documentos al iniciar
 @app.on_event("startup")
 async def startup_event():
-    docs_loaded = agent.load_documents()
+    # Ruta absoluta a docs/ desde la raiz del proyecto
+    base_dir = Path(__file__).parent.parent
+    docs_path = str(base_dir / "docs")
+    docs_loaded = agent.load_documents(docs_path)
     print(f"✅ {docs_loaded} documentos cargados exitosamente")
 
 class Question(BaseModel):
