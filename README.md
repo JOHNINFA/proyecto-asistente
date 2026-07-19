@@ -476,9 +476,9 @@ Este proyecto fue desarrollado como parte del Challenge de Alura Latam.
 
 ## 👨‍💻 Autor
 
-**Tu Nombre**
-- GitHub: [@tu-usuario](https://github.com/tu-usuario)
-- LinkedIn: [Tu Perfil](https://linkedin.com/in/tu-perfil)
+**John Infante**
+- GitHub: [@JOHNINFA](https://github.com/JOHNINFA)
+- Email: johningonzalez2021@gmail.com
 
 ---
 
