@@ -27,6 +27,34 @@
 
 ---
 
+## 🚀 Despliegue (Deployment)
+
+La aplicación está **contenida en Docker** y desplegada en un **servidor Linux (Azure VPS)** con acceso por SSH.
+
+**🌐 Demo en vivo:** http://20.245.60.17:8000
+
+### Cómo se desplegó
+
+1. Servidor **Ubuntu 24.04** en Azure (máquina virtual / VPS).
+2. Instalación de **Docker** en el servidor.
+3. Clonación del repositorio desde GitHub.
+4. Construcción de la imagen: `docker build -t asistente-ia .`
+5. Ejecución del contenedor pasando la API key como variable de entorno:
+   ```bash
+   docker run -d --restart unless-stopped -p 8000:8000 \
+     -e DEEPSEEK_API_KEY="tu_clave" asistente-ia
+   ```
+6. Apertura del puerto **8000** en el firewall de Azure (Network Security Group).
+
+### 📸 Evidencia del despliegue
+
+![Asistente IA en producción](docs/screenshots/asistente.png)
+
+> ℹ️ El servidor de demo es temporal (crédito de estudiante de Azure). El proyecto
+> se puede redesplegar con los mismos comandos en cualquier VPS.
+
+---
+
 ## 🏗️ Arquitectura
 
 ```
