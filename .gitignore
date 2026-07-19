@@ -18,3 +18,13 @@ PARA_IA.md
 .claude/
 .cursor/
 .anthropic/
+
+# Documentación interna (solo local, no en el repo público)
+ARQUITECTURA.md
+COMANDOS_UTILES.md
+DOCUMENTACION.md
+GUIA_RAPIDA.md
+INDICE_DOCUMENTACION.md
+PROYECTO_COMPLETADO.md
+QUICKSTART.md
+DEPLOY_AZURE.md
